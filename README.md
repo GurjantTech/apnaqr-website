@@ -16,17 +16,16 @@ Use a local server rather than opening the files directly: the site uses root-re
 ## Structure
 
 ```
-index.html              Home: QR generator first, then the scanner app, our apps and FAQ
+index.html              Home: QR generator first, then the Apna QR app, our apps and FAQ
 create/index.html       Standalone QR generator
 privacy.html            Privacy policy (link this in Play Console)
 terms.html              Terms of use
 404.html                Not-found page (GitHub Pages serves it automatically)
 assets/css/styles.css   Design tokens (light/dark) + all components
-assets/js/main.js       Theme toggle, nav, scroll reveal, tilt/magnetic, Lottie, confetti
+assets/js/main.js       Theme toggle, nav, scroll reveal, magnetic buttons, confetti
 assets/js/generator.js  QR generator (payloads mirror the app's QrPayloadBuilder.kt)
-assets/vendor/          qr-code-styling 1.9.2, lottie-web 5.12.2 (light), with licences
-assets/lottie/          Lottie animations copied from the app
-assets/img/             Icons, logos (SVG), OG image, app icons (apps/), Play Store screenshots (screens/)
+assets/vendor/          qr-code-styling 1.9.2, with licence
+assets/img/             Icons, logos (SVG), OG image, app icons (apps/), Play Store screenshots used in the app promo (screens/)
 CNAME, .nojekyll, app-ads.txt, robots.txt, sitemap.xml, manifest.webmanifest
 ```
 
@@ -41,8 +40,8 @@ The "Our apps" cards in `index.html` link to the Play Store listings. Icons live
 | What | Where | How |
 | --- | --- | --- |
 | AdMob publisher ID | `app-ads.txt` | Replace `pub-XXXXXXXXXXXXXXXX` with your real ID from AdMob → Settings → Account information. |
-| Support email | all `*.html` files | Search for `support@apnaqr.in` and replace it if you use a different address. Make sure the mailbox exists. |
-| App screenshots | `assets/img/screens/` | `apnaqr-1.webp` to `apnaqr-5.webp` are the current Play Store screenshots (480×853). If the listing changes, overwrite them with the same names and a 9:16 ratio, keeping each under 150 KB. Example: `cwebp -q 76 -resize 480 0 shot.png -o apnaqr-1.webp`. |
+| Support email | all `*.html` files | Currently `gtech10926@gmail.com`. To change it, search the HTML files for that address. |
+| App screenshots | `assets/img/screens/` | `apnaqr-1.webp` to `apnaqr-3.webp` are Play Store screenshots (480×853) shown in the app promo card. If the listing changes, overwrite them with the same names and a 9:16 ratio, keeping each under 150 KB. Example: `cwebp -q 76 -resize 480 0 shot.png -o apnaqr-1.webp`. |
 
 ## Host on GitHub Pages with apnaqr.in
 
