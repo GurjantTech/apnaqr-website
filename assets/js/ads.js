@@ -9,10 +9,10 @@
 
   var ADSENSE = {
     client: 'ca-pub-2294761279203706',
-    // data-ad-slot-key on each <aside class="ad-slot"> picks one of these units.
+    // Horizontal Display units only. data-ad-slot-key on each <aside class="ad-slot"> picks one.
     units: {
-      horizontal: { slot: '1993165487', label: 'Horizontal', sizes: { mobile: [320, 100], desktop: [728, 90] } },
-      square: { slot: '1341147536', label: 'Square', sizes: { mobile: [300, 250], desktop: [336, 280] } }
+      'horizontal-1': { slot: '1993165487', label: 'Horizontal ad 1', sizes: { mobile: [320, 100], desktop: [728, 90] } },
+      'horizontal-2': { slot: '1076678798', label: 'Horizontal ad 2', sizes: { mobile: [320, 100], desktop: [728, 90] } }
     }
   };
 
@@ -52,11 +52,11 @@
     boxes.forEach(function (b) {
       var demo = document.createElement('div');
       var m = b.unit.sizes.mobile, d = b.unit.sizes.desktop;
-      demo.className = 'ad-demo ad-demo--' + b.box.getAttribute('data-ad-slot-key');
+      demo.className = 'ad-demo';
       demo.setAttribute('role', 'note');
       demo.innerHTML =
         '<strong>Demo Ad — Not a real advertisement</strong>' +
-        '<span>' + b.unit.label + ' unit · slot ' + b.unit.slot + '</span>' +
+        '<span>' + b.unit.label + ' · slot ' + b.unit.slot + '</span>' +
         '<span class="ad-demo__size" data-mobile="' + m[0] + ' × ' + m[1] + '" data-desktop="' + d[0] + ' × ' + d[1] + '"></span>';
       b.ins.hidden = true; // the real unit is never filled or pushed in demo mode
       b.box.querySelector('.ad-slot__box').appendChild(demo);

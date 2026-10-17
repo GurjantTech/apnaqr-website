@@ -46,12 +46,12 @@ The "Our apps" cards in `index.html` link to the Play Store listings. Icons live
 
 ## Google AdSense (website ads)
 
-Publisher ID `ca-pub-2294761279203706` is set in `assets/js/ads.js`, the `google-adsense-account` meta tag in `index.html`, and `ads.txt`. There are two units:
+Publisher ID `ca-pub-2294761279203706` is set in `assets/js/ads.js`, the `google-adsense-account` meta tag in `index.html`, and `ads.txt`. The site uses only two horizontal Display units:
 
 | Unit | Slot ID | Where | Sizes (mobile / desktop) |
 | --- | --- | --- | --- |
-| Horizontal | `1993165487` | Below the QR generator (home and `/create/`) | 320×100 / 728×90 |
-| Square | `1341147536` | Between "Our apps" and the FAQ (home only) | 300×250 / 336×280 |
+| Horizontal ad 1 | `1993165487` | Below the QR generator (home and `/create/`) | 320×100 / 728×90 |
+| Horizontal ad 2 | `1076678798` | Between "Our apps" and the FAQ (home only) | 320×100 / 728×90 |
 
 `ads.js` picks the mode from the hostname, so nothing needs toggling before you deploy:
 
@@ -67,7 +67,7 @@ Privacy, terms and the 404 page never show ads.
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000` and scroll below the generator for the horizontal box, and below "Our apps" for the square box. To check other widths, use your browser's device toolbar (Ctrl+Shift+M in Chrome or Firefox): try 360px (mobile) and 1280px or wider (desktop). The size label in each box switches at 768px. To preview on your phone, open `http://<your-computer's-LAN-IP>:8000` on the same Wi-Fi.
+Open `http://localhost:8000` and scroll below the generator for horizontal ad 1, and below "Our apps" for horizontal ad 2. To check other widths, use your browser's device toolbar (Ctrl+Shift+M in Chrome or Firefox): try 360px (mobile) and 1280px or wider (desktop). The size label in each box switches at 768px. To preview on your phone, open `http://<your-computer's-LAN-IP>:8000` on the same Wi-Fi.
 
 ### Before real ads can show
 

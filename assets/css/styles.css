@@ -605,14 +605,9 @@ button { cursor: pointer; }
   border-radius: var(--r-md); border: 1px solid var(--outline-variant); background: var(--surface);
 }
 .ad-slot__label { margin-bottom: 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); text-align: center; }
-/* Reserved heights match the units: horizontal 320×100 / 728×90, square 300×250 / 336×280. */
+/* Reserved heights match the horizontal units: 320×100 on phones, 728×90 from 768px. */
 .ad-slot__unit { width: 100%; min-height: 100px; overflow: hidden; }
-.ad-slot--square .ad-slot__box { max-width: 380px; }
-.ad-slot--square .ad-slot__unit { min-height: 250px; }
-@media (min-width: 768px) {
-  .ad-slot--horizontal .ad-slot__unit { min-height: 90px; }
-  .ad-slot--square .ad-slot__unit { min-height: 280px; }
-}
+@media (min-width: 768px) { .ad-slot__unit { min-height: 90px; } }
 .ad-slot:has(ins[data-ad-status="unfilled"]) { display: none; }
 
 /* Local demo placeholders (localhost only, see ads.js). Same footprint as the real units. */
@@ -624,9 +619,7 @@ button { cursor: pointer; }
 }
 .ad-demo strong { color: var(--text); font-size: 13px; }
 .ad-demo__size::before { content: attr(data-mobile) " px"; }
-.ad-demo--square { width: min(100%, 300px); height: 250px; }
 @media (min-width: 768px) {
-  .ad-demo--horizontal { width: min(100%, 728px); height: 90px; }
-  .ad-demo--square { width: min(100%, 336px); height: 280px; }
+  .ad-demo { width: min(100%, 728px); height: 90px; }
   .ad-demo__size::before { content: attr(data-desktop) " px"; }
 }
