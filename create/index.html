@@ -30,6 +30,7 @@
 <script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('apnaqr-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})();</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/generator.js" defer></script>
+<script src="/assets/js/ads.js" defer></script>
 <link rel="alternate" href="android-app://com.app.apnaqrscanner/https/apnaqr.in/create/">
 </head>
 <body>
@@ -232,6 +233,16 @@
       </ul>
     </div>
   </section>
+
+  <!-- Ad: below the QR generator. Hidden until AdSense IDs are set in /assets/js/ads.js -->
+  <aside class="ad-slot" data-ad-slot-key="below-generator" aria-label="Advertisement" hidden>
+    <div class="container">
+      <div class="ad-slot__box">
+        <p class="ad-slot__label">Advertisement</p>
+        <ins class="adsbygoogle ad-slot__unit" style="display:block" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+  </aside>
 </main>
 
 <footer class="footer">
@@ -245,6 +256,7 @@
       <a href="/#apps">Our apps</a>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms</a>
+      <a href="/privacy.html#ads" data-ad-privacy hidden>Ad privacy choices</a>
       <a href="mailto:gtech10926@gmail.com">Contact: gtech10926@gmail.com</a>
     </nav>
     <p class="footer__legal">© <span data-year>2026</span> Apna QR · Made with 💙 in India</p>

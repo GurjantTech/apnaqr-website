@@ -595,3 +595,16 @@ button { cursor: pointer; }
 .gen-hero .grad-word, .app-promo .grad-word { white-space: nowrap; }
 @media (min-width: 768px) { .gen-hero__band h1 { max-width: 22ch; } }
 .tpl::before { box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.18), 0 0 0 1px var(--outline-variant); }
+
+/* ---------- Ad slots (Google AdSense) ----------
+   Neutral box with an "Advertisement" label so ads never look like generator controls.
+   Space is reserved to limit layout shift; unfilled units collapse. */
+.ad-slot { margin: 40px 0 8px; }
+.ad-slot__box {
+  max-width: 970px; margin-inline: auto; padding: 10px 12px 12px;
+  border-radius: var(--r-md); border: 1px solid var(--outline-variant); background: var(--surface);
+}
+.ad-slot__label { margin-bottom: 6px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); text-align: center; }
+.ad-slot__unit { width: 100%; min-height: 100px; overflow: hidden; }
+@media (min-width: 768px) { .ad-slot__unit { min-height: 90px; } }
+.ad-slot:has(ins[data-ad-status="unfilled"]) { display: none; }

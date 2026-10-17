@@ -23,6 +23,8 @@
 <meta name="twitter:title" content="Apna QR – Free QR Code Generator">
 <meta name="twitter:description" content="Make styled QR codes for links, Wi-Fi, UPI, WhatsApp and more. PNG &amp; SVG downloads, nothing uploaded.">
 <meta name="twitter:image" content="https://apnaqr.in/assets/img/og-image.jpg">
+<!-- AdSense site verification: replace with your publisher ID (same as in /assets/js/ads.js) -->
+<meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -35,6 +37,7 @@
 <script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('apnaqr-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})();</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/generator.js" defer></script>
+<script src="/assets/js/ads.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -289,6 +292,16 @@
     </div>
   </section>
 
+  <!-- Ad: below the QR generator. Hidden until AdSense IDs are set in /assets/js/ads.js -->
+  <aside class="ad-slot" data-ad-slot-key="below-generator" aria-label="Advertisement" hidden>
+    <div class="container">
+      <div class="ad-slot__box">
+        <p class="ad-slot__label">Advertisement</p>
+        <ins class="adsbygoogle ad-slot__unit" style="display:block" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+  </aside>
+
   <!-- 2. Apna QR app -->
   <section class="section" id="scanner" aria-labelledby="scanner-title">
     <div class="container">
@@ -382,6 +395,16 @@
     </div>
   </section>
 
+  <!-- Ad: between Our apps and FAQ. Hidden until AdSense IDs are set in /assets/js/ads.js -->
+  <aside class="ad-slot" data-ad-slot-key="between-sections" aria-label="Advertisement" hidden>
+    <div class="container">
+      <div class="ad-slot__box">
+        <p class="ad-slot__label">Advertisement</p>
+        <ins class="adsbygoogle ad-slot__unit" style="display:block" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+  </aside>
+
   <!-- FAQ -->
   <section class="section" id="faq" aria-labelledby="faq-title">
     <div class="container container--narrow">
@@ -460,6 +483,7 @@
       <a href="/#apps">Our apps</a>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms</a>
+      <a href="/privacy.html#ads" data-ad-privacy hidden>Ad privacy choices</a>
       <a href="mailto:gtech10926@gmail.com">Contact: gtech10926@gmail.com</a>
     </nav>
     <p class="footer__legal">© <span data-year>2026</span> Apna QR · Made with 💙 in India</p>
