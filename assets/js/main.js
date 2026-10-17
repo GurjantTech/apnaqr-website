@@ -1,4 +1,4 @@
-/* Apna QR — site interactions (theme, nav, reveal, motion polish, Lottie, confetti). */
+/* Apna QR — site interactions (theme, nav, reveal, motion polish, confetti). */
 (function () {
   'use strict';
 
@@ -119,47 +119,6 @@
       });
       el.addEventListener('pointerleave', function () { el.style.transform = ''; });
     });
-
-    // Bento hover tilt
-    document.querySelectorAll('[data-tilt]').forEach(function (el) {
-      el.addEventListener('pointermove', function (e) {
-        var r = el.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        el.style.setProperty('--rx', (py * -5).toFixed(2) + 'deg');
-        el.style.setProperty('--ry', (px * 6).toFixed(2) + 'deg');
-      });
-      el.addEventListener('pointerleave', function () {
-        el.style.removeProperty('--rx');
-        el.style.removeProperty('--ry');
-      });
-    });
-  }
-
-  /* ---------- Lottie (lazy) ---------- */
-  var lottieEls = document.querySelectorAll('[data-lottie]');
-  if (lottieEls.length && 'IntersectionObserver' in window) {
-    var lottieObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var el = entry.target;
-        lottieObserver.unobserve(el);
-        loadScript('/assets/vendor/lottie-light-5.12.2.min.js').then(function () {
-          var anim = window.lottie.loadAnimation({
-            container: el,
-            renderer: 'svg',
-            loop: true,
-            autoplay: !reduceMotion.matches,
-            path: el.getAttribute('data-lottie'),
-            rendererSettings: { preserveAspectRatio: 'xMidYMid meet' }
-          });
-          if (reduceMotion.matches) {
-            anim.addEventListener('DOMLoaded', function () { anim.goToAndStop(anim.totalFrames / 2, true); });
-          }
-        }).catch(function () { /* decorative only */ });
-      });
-    }, { rootMargin: '200px 0px' });
-    lottieEls.forEach(function (el) { lottieObserver.observe(el); });
   }
 
   /* ---------- Confetti ---------- */
