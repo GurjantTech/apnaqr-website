@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apna QR – Free QR &amp; Barcode Scanner + QR Generator | apnaqr.in</title>
+<meta name="description" content="Apna QR is a fast, secure, offline QR and barcode scanner for Android with smart actions for UPI, Wi-Fi, WhatsApp and contacts, plus a free styled QR code generator that runs in your browser.">
+<link rel="canonical" href="https://apnaqr.in/">
+<link rel="alternate" href="android-app://com.app.apnaqrscanner/https/apnaqr.in/">
+<meta name="theme-color" content="#2D67E8">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Apna QR">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://apnaqr.in/">
+<meta property="og:title" content="Apna QR – Free QR & Barcode Scanner + QR Generator">
+<meta property="og:description" content="Scan any QR or barcode. Smart actions for links, Wi-Fi, UPI, contacts and more. Free, offline, no sign-up.">
+<meta property="og:image" content="https://apnaqr.in/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Apna QR: Scan any QR or barcode">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apna QR – Free QR & Barcode Scanner + QR Generator">
+<meta name="twitter:description" content="Scan any QR or barcode. Smart actions for links, Wi-Fi, UPI, contacts and more.">
+<meta name="twitter:image" content="https://apnaqr.in/assets/img/og-image.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@700;800&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@700;800&amp;display=swap"></noscript>
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('apnaqr-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})();</script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/generator.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Apna QR Scanner",
+  "alternateName": "Apna QR",
+  "url": "https://apnaqr.in/",
+  "image": "https://apnaqr.in/assets/img/icon-512.png",
+  "description": "Fast, secure, offline QR and barcode scanner with smart actions for UPI, Wi-Fi, WhatsApp, contacts and more, plus a styled QR code generator.",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "UtilitiesApplication",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.app.apnaqrscanner",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.app.apnaqrscanner",
+  "inLanguage": ["en", "hi", "ta", "te", "bn", "mr"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is it free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The scanner, smart actions, history and QR maker are free. There is no subscription and no sign-up." } },
+    { "@type": "Question", "name": "Does it upload my data?", "acceptedAnswer": { "@type": "Answer", "text": "No. Codes are read on your phone, and your scan and create history stays in a database on your device. We don't run a server that stores your codes." } },
+    { "@type": "Question", "name": "Why ads?", "acceptedAnswer": { "@type": "Answer", "text": "Ads keep Apna QR free. You see a small banner, and a short video only when you choose to unlock something. In the EEA and UK you are asked for consent before any personalised ads." } },
+    { "@type": "Question", "name": "What are premium templates?", "acceptedAnswer": { "@type": "Answer", "text": "A few QR style templates are premium. Watch one short video and they unlock for the rest of the session. No payment needed." } },
+    { "@type": "Question", "name": "Which barcodes are supported?", "acceptedAnswer": { "@type": "Answer", "text": "QR Code, Data Matrix, Aztec, PDF417, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, Codabar and ITF." } },
+    { "@type": "Question", "name": "How to scan from gallery?", "acceptedAnswer": { "@type": "Answer", "text": "On the scan screen, tap the gallery button and pick a photo or screenshot. Apna QR reads the code on your phone; the image is never uploaded." } },
+    { "@type": "Question", "name": "Is UPI scanning safe?", "acceptedAnswer": { "@type": "Answer", "text": "Apna QR only reads the UPI code and opens the UPI app you pick. It never sees your PIN or touches your money. Always check the payee name in your UPI app before paying; Apna QR reminds you every time." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="brand" href="/" aria-label="Apna QR home">
+      <img src="/assets/img/logo-mark.svg" width="34" height="34" alt="">
+      <span>Apna QR</span>
+    </a>
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#create">Create QR</a>
+      <a href="#apps">Apps</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to dark mode">
+        <svg class="i i-theme-sun" aria-hidden="true"><use href="/assets/img/icons.svg#i-sun"/></svg>
+        <svg class="i i-theme-moon" aria-hidden="true"><use href="/assets/img/icons.svg#i-moon"/></svg>
+      </button>
+      <a class="btn btn--grad btn--sm magnetic" href="https://play.google.com/store/apps/details?id=com.app.apnaqrscanner" rel="noopener">Get the app</a>
+      <button class="icon-btn nav__menu" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero-wrap" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero grain" data-hero>
+        <div class="hero__cursor" aria-hidden="true"></div>
+        <div class="hero__copy">
+          <p class="eyebrow">Fast · Secure · Offline</p>
+          <h1 id="hero-title">Scan any <span class="grad-word">QR</span> or barcode</h1>
+          <p class="hero__sub">Smart actions for links, Wi-Fi, UPI, contacts and more.</p>
+          <div class="hero__ctas">
+            <a class="play-badge magnetic" href="https://play.google.com/store/apps/details?id=com.app.apnaqrscanner" rel="noopener">
+              <img src="/assets/img/google-play-badge.webp" width="188" height="56" alt="Get it on Google Play">
+            </a>
+            <a class="btn btn--glass magnetic" href="#create">Make a QR now
+              <svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="phone phone--hero">
+            <div class="phone__screen scan-ui">
+              <div class="scan-ui__bar">
+                <span>Scan</span>
+                <svg class="i"><use href="/assets/img/icons.svg#i-flash"/></svg>
+              </div>
+              <div class="viewfinder">
+                <span class="vf-corner vf-corner--tl"></span><span class="vf-corner vf-corner--tr"></span>
+                <span class="vf-corner vf-corner--bl"></span><span class="vf-corner vf-corner--br"></span>
+                <svg class="hero-qr" viewBox="-2 -2 29 29" width="200" height="200"><rect x="-2" y="-2" width="29" height="29" rx="3" fill="#fff"/><path fill="#1E4ED8" d="M10.12 0.12h.76v.76h-.76zM11.12 0.12h.76v.76h-.76zM12.12 0.12h.76v.76h-.76zM13.12 0.12h.76v.76h-.76zM14.12 0.12h.76v.76h-.76zM16.12 0.12h.76v.76h-.76zM8.12 1.12h.76v.76h-.76zM9.12 1.12h.76v.76h-.76zM10.12 1.12h.76v.76h-.76zM12.12 1.12h.76v.76h-.76zM14.12 1.12h.76v.76h-.76zM15.12 1.12h.76v.76h-.76zM9.12 2.12h.76v.76h-.76zM10.12 2.12h.76v.76h-.76zM11.12 2.12h.76v.76h-.76zM13.12 2.12h.76v.76h-.76zM14.12 2.12h.76v.76h-.76zM15.12 2.12h.76v.76h-.76zM11.12 3.12h.76v.76h-.76zM13.12 3.12h.76v.76h-.76zM14.12 3.12h.76v.76h-.76zM8.12 4.12h.76v.76h-.76zM11.12 4.12h.76v.76h-.76zM14.12 4.12h.76v.76h-.76zM15.12 4.12h.76v.76h-.76zM9.12 5.12h.76v.76h-.76zM13.12 5.12h.76v.76h-.76zM15.12 5.12h.76v.76h-.76zM16.12 5.12h.76v.76h-.76zM8.12 6.12h.76v.76h-.76zM10.12 6.12h.76v.76h-.76zM12.12 6.12h.76v.76h-.76zM14.12 6.12h.76v.76h-.76zM16.12 6.12h.76v.76h-.76zM10.12 7.12h.76v.76h-.76zM13.12 7.12h.76v.76h-.76zM14.12 7.12h.76v.76h-.76zM15.12 7.12h.76v.76h-.76zM0.12 8.12h.76v.76h-.76zM2.12 8.12h.76v.76h-.76zM4.12 8.12h.76v.76h-.76zM6.12 8.12h.76v.76h-.76zM10.12 8.12h.76v.76h-.76zM14.12 8.12h.76v.76h-.76zM15.12 8.12h.76v.76h-.76zM16.12 8.12h.76v.76h-.76zM20.12 8.12h.76v.76h-.76zM23.12 8.12h.76v.76h-.76zM0.12 9.12h.76v.76h-.76zM7.12 9.12h.76v.76h-.76zM8.12 9.12h.76v.76h-.76zM9.12 9.12h.76v.76h-.76zM11.12 9.12h.76v.76h-.76zM14.12 9.12h.76v.76h-.76zM16.12 9.12h.76v.76h-.76zM18.12 9.12h.76v.76h-.76zM24.12 9.12h.76v.76h-.76zM1.12 10.12h.76v.76h-.76zM5.12 10.12h.76v.76h-.76zM6.12 10.12h.76v.76h-.76zM8.12 10.12h.76v.76h-.76zM11.12 10.12h.76v.76h-.76zM12.12 10.12h.76v.76h-.76zM13.12 10.12h.76v.76h-.76zM16.12 10.12h.76v.76h-.76zM18.12 10.12h.76v.76h-.76zM19.12 10.12h.76v.76h-.76zM20.12 10.12h.76v.76h-.76zM22.12 10.12h.76v.76h-.76zM23.12 10.12h.76v.76h-.76zM24.12 10.12h.76v.76h-.76zM3.12 11.12h.76v.76h-.76zM4.12 11.12h.76v.76h-.76zM5.12 11.12h.76v.76h-.76zM7.12 11.12h.76v.76h-.76zM10.12 11.12h.76v.76h-.76zM11.12 11.12h.76v.76h-.76zM16.12 11.12h.76v.76h-.76zM17.12 11.12h.76v.76h-.76zM19.12 11.12h.76v.76h-.76zM23.12 11.12h.76v.76h-.76zM0.12 12.12h.76v.76h-.76zM1.12 12.12h.76v.76h-.76zM3.12 12.12h.76v.76h-.76zM5.12 12.12h.76v.76h-.76zM6.12 12.12h.76v.76h-.76zM8.12 12.12h.76v.76h-.76zM12.12 12.12h.76v.76h-.76zM15.12 12.12h.76v.76h-.76zM16.12 12.12h.76v.76h-.76zM17.12 12.12h.76v.76h-.76zM18.12 12.12h.76v.76h-.76zM21.12 12.12h.76v.76h-.76zM23.12 12.12h.76v.76h-.76zM24.12 12.12h.76v.76h-.76zM3.12 13.12h.76v.76h-.76zM4.12 13.12h.76v.76h-.76zM5.12 13.12h.76v.76h-.76zM7.12 13.12h.76v.76h-.76zM9.12 13.12h.76v.76h-.76zM10.12 13.12h.76v.76h-.76zM11.12 13.12h.76v.76h-.76zM12.12 13.12h.76v.76h-.76zM13.12 13.12h.76v.76h-.76zM17.12 13.12h.76v.76h-.76zM18.12 13.12h.76v.76h-.76zM21.12 13.12h.76v.76h-.76zM24.12 13.12h.76v.76h-.76zM0.12 14.12h.76v.76h-.76zM5.12 14.12h.76v.76h-.76zM6.12 14.12h.76v.76h-.76zM7.12 14.12h.76v.76h-.76zM9.12 14.12h.76v.76h-.76zM11.12 14.12h.76v.76h-.76zM12.12 14.12h.76v.76h-.76zM14.12 14.12h.76v.76h-.76zM16.12 14.12h.76v.76h-.76zM17.12 14.12h.76v.76h-.76zM19.12 14.12h.76v.76h-.76zM22.12 14.12h.76v.76h-.76zM23.12 14.12h.76v.76h-.76zM24.12 14.12h.76v.76h-.76zM1.12 15.12h.76v.76h-.76zM2.12 15.12h.76v.76h-.76zM3.12 15.12h.76v.76h-.76zM9.12 15.12h.76v.76h-.76zM12.12 15.12h.76v.76h-.76zM13.12 15.12h.76v.76h-.76zM14.12 15.12h.76v.76h-.76zM17.12 15.12h.76v.76h-.76zM18.12 15.12h.76v.76h-.76zM20.12 15.12h.76v.76h-.76zM23.12 15.12h.76v.76h-.76zM0.12 16.12h.76v.76h-.76zM2.12 16.12h.76v.76h-.76zM3.12 16.12h.76v.76h-.76zM4.12 16.12h.76v.76h-.76zM5.12 16.12h.76v.76h-.76zM6.12 16.12h.76v.76h-.76zM11.12 16.12h.76v.76h-.76zM14.12 16.12h.76v.76h-.76zM16.12 16.12h.76v.76h-.76zM17.12 16.12h.76v.76h-.76zM18.12 16.12h.76v.76h-.76zM19.12 16.12h.76v.76h-.76zM20.12 16.12h.76v.76h-.76zM21.12 16.12h.76v.76h-.76zM8.12 17.12h.76v.76h-.76zM9.12 17.12h.76v.76h-.76zM10.12 17.12h.76v.76h-.76zM11.12 17.12h.76v.76h-.76zM14.12 17.12h.76v.76h-.76zM16.12 17.12h.76v.76h-.76zM20.12 17.12h.76v.76h-.76zM21.12 17.12h.76v.76h-.76zM23.12 17.12h.76v.76h-.76zM24.12 17.12h.76v.76h-.76zM13.12 18.12h.76v.76h-.76zM15.12 18.12h.76v.76h-.76zM16.12 18.12h.76v.76h-.76zM18.12 18.12h.76v.76h-.76zM20.12 18.12h.76v.76h-.76zM21.12 18.12h.76v.76h-.76zM23.12 18.12h.76v.76h-.76zM24.12 18.12h.76v.76h-.76zM11.12 19.12h.76v.76h-.76zM16.12 19.12h.76v.76h-.76zM20.12 19.12h.76v.76h-.76zM21.12 19.12h.76v.76h-.76zM8.12 20.12h.76v.76h-.76zM10.12 20.12h.76v.76h-.76zM12.12 20.12h.76v.76h-.76zM16.12 20.12h.76v.76h-.76zM17.12 20.12h.76v.76h-.76zM18.12 20.12h.76v.76h-.76zM19.12 20.12h.76v.76h-.76zM20.12 20.12h.76v.76h-.76zM21.12 20.12h.76v.76h-.76zM24.12 20.12h.76v.76h-.76zM9.12 21.12h.76v.76h-.76zM10.12 21.12h.76v.76h-.76zM11.12 21.12h.76v.76h-.76zM12.12 21.12h.76v.76h-.76zM13.12 21.12h.76v.76h-.76zM19.12 21.12h.76v.76h-.76zM20.12 21.12h.76v.76h-.76zM21.12 21.12h.76v.76h-.76zM22.12 21.12h.76v.76h-.76zM8.12 22.12h.76v.76h-.76zM9.12 22.12h.76v.76h-.76zM11.12 22.12h.76v.76h-.76zM12.12 22.12h.76v.76h-.76zM14.12 22.12h.76v.76h-.76zM16.12 22.12h.76v.76h-.76zM20.12 22.12h.76v.76h-.76zM24.12 22.12h.76v.76h-.76zM9.12 23.12h.76v.76h-.76zM12.12 23.12h.76v.76h-.76zM13.12 23.12h.76v.76h-.76zM14.12 23.12h.76v.76h-.76zM16.12 23.12h.76v.76h-.76zM17.12 23.12h.76v.76h-.76zM20.12 23.12h.76v.76h-.76zM21.12 23.12h.76v.76h-.76zM23.12 23.12h.76v.76h-.76zM8.12 24.12h.76v.76h-.76zM9.12 24.12h.76v.76h-.76zM10.12 24.12h.76v.76h-.76zM11.12 24.12h.76v.76h-.76zM14.12 24.12h.76v.76h-.76zM15.12 24.12h.76v.76h-.76zM16.12 24.12h.76v.76h-.76zM17.12 24.12h.76v.76h-.76zM18.12 24.12h.76v.76h-.76zM19.12 24.12h.76v.76h-.76zM23.12 24.12h.76v.76h-.76zM24.12 24.12h.76v.76h-.76z"/><rect x="0.5" y="0.5" width="6" height="6" rx="1.6" fill="none" stroke="#0A1F66" stroke-width="1"/><rect x="2" y="2" width="3" height="3" rx=".9" fill="#2D67E8"/><rect x="18.5" y="0.5" width="6" height="6" rx="1.6" fill="none" stroke="#0A1F66" stroke-width="1"/><rect x="20" y="2" width="3" height="3" rx=".9" fill="#2D67E8"/><rect x="0.5" y="18.5" width="6" height="6" rx="1.6" fill="none" stroke="#0A1F66" stroke-width="1"/><rect x="2" y="20" width="3" height="3" rx=".9" fill="#2D67E8"/></svg>
+                <span class="scan-line"></span>
+              </div>
+              <div class="scan-ui__result">
+                <span class="chip-ic" style="--a: var(--c-url)"><svg class="i"><use href="/assets/img/icons.svg#i-link"/></svg></span>
+                <span class="scan-ui__result-text"><b>apnaqr.in</b><small>Safe link · Open</small></span>
+                <svg class="i scan-ui__ok"><use href="/assets/img/icons.svg#i-shield"/></svg>
+              </div>
+            </div>
+          </div>
+          <span class="sticker sticker--upi">UPI <b>✓</b></span>
+          <span class="sticker sticker--wifi"><svg class="i"><use href="/assets/img/icons.svg#i-wifi"/></svg> Wi-Fi</span>
+          <span class="sticker sticker--wa"><svg class="i"><use href="/assets/img/icons.svg#i-whatsapp"/></svg> WhatsApp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="trust" aria-label="Why people trust Apna QR">
+    <div class="container">
+      <ul class="trust__list">
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-user"/></svg>No sign-up</li>
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-cloud-off"/></svg>Nothing uploaded</li>
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-globe"/></svg>6 Indian languages</li>
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg>Free</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Features bento -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="kicker">Features</p>
+        <h2 id="features-title">One app. Every code. Zero drama.</h2>
+        <p class="section__sub">Everything you need to scan, understand and make QR codes, packed into a tiny app.</p>
+      </div>
+
+      <div class="bento">
+        <article class="tile tile--scan tile--xl reveal" data-tilt>
+          <div class="tile__body">
+            <span class="chip-ic" style="--a: var(--c-url)"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-scan"/></svg></span>
+            <h3>Scan anything</h3>
+            <p>QR codes and every common barcode, from shop products to boarding passes. Dark corner? Flip on the flash.</p>
+            <ul class="mini-chips" aria-label="Supported formats">
+              <li>QR</li><li>EAN-13</li><li>UPC</li><li>Code 128</li><li>Data Matrix</li><li>PDF417</li><li>+ more</li>
+            </ul>
+          </div>
+          <img class="tile__art" src="/assets/img/scanner-hero.webp" width="640" height="691" loading="lazy" decoding="async" alt="A phone scanning a QR code on a desk with the Apna QR viewfinder">
+        </article>
+
+        <article class="tile tile--photo reveal" data-tilt>
+          <span class="chip-ic" style="--a: var(--c-wifi)"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-image"/></svg></span>
+          <h3>Scan from a photo</h3>
+          <p>Got a screenshot? Pick it from your gallery and we read it right on your phone.</p>
+          <div class="lottie-box lottie-box--bar" data-lottie="/assets/lottie/scanning-anim.json" aria-hidden="true"></div>
+        </article>
+
+        <article class="tile tile--safety tile--tall reveal" data-tilt>
+          <span class="chip-ic" style="--a: var(--tertiary)"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-shield"/></svg></span>
+          <h3>Safety shield</h3>
+          <p>We check every code before you tap.</p>
+          <ul class="alerts">
+            <li class="alert alert--block"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-x"/></svg><span><b>Blocked</b> Harmful link types never open</span></li>
+            <li class="alert alert--warn"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-alert"/></svg><span><b>Not secure</b> Heads-up for plain HTTP links</span></li>
+            <li class="alert alert--ok"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upi"/></svg><span><b>Verify the payee name</b> Before every UPI payment</span></li>
+          </ul>
+        </article>
+
+        <article class="tile tile--actions tile--wide reveal" data-tilt>
+          <span class="chip-ic" style="--a: var(--c-upi)"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg></span>
+          <h3>Smart actions</h3>
+          <p>The right button shows up for every code. One tap and you're done.</p>
+          <ul class="action-chips">
+            <li style="--a: var(--c-upi)"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upi"/></svg></span>Pay via UPI</li>
+            <li style="--a: var(--c-whatsapp)"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-whatsapp"/></svg></span>WhatsApp chat</li>
+            <li style="--a: var(--c-wifi)"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-wifi"/></svg></span>Join Wi-Fi</li>
+            <li style="--a: var(--c-contact)"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-user"/></svg></span>Save contact</li>
+            <li style="--a: var(--c-location)"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg></span>Open in Maps</li>
+            <li style="--a: var(--c-event)"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-calendar"/></svg></span>Add to calendar</li>
+          </ul>
+        </article>
+
+        <article class="tile tile--types reveal" data-tilt>
+          <h3><span class="big-num">10</span> QR types</h3>
+          <p>Make a code for anything you share.</p>
+          <ul class="type-dots" aria-label="QR types">
+            <li style="--a: var(--c-url)" title="Website"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-link"/></svg><span class="sr-only">Website</span></li>
+            <li style="--a: var(--c-wifi)" title="Wi-Fi"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-wifi"/></svg><span class="sr-only">Wi-Fi</span></li>
+            <li style="--a: var(--c-whatsapp)" title="WhatsApp"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-whatsapp"/></svg><span class="sr-only">WhatsApp</span></li>
+            <li style="--a: var(--c-upi)" title="UPI"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upi"/></svg><span class="sr-only">UPI</span></li>
+            <li style="--a: var(--c-text)" title="Text"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-text"/></svg><span class="sr-only">Text</span></li>
+            <li style="--a: var(--c-phone)" title="Phone"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-phone"/></svg><span class="sr-only">Phone</span></li>
+            <li style="--a: var(--c-email)" title="Email"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-mail"/></svg><span class="sr-only">Email</span></li>
+            <li style="--a: var(--c-sms)" title="SMS"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-sms"/></svg><span class="sr-only">SMS</span></li>
+            <li style="--a: var(--c-contact)" title="Contact"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-user"/></svg><span class="sr-only">Contact</span></li>
+            <li style="--a: var(--c-location)" title="Location"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg><span class="sr-only">Location</span></li>
+          </ul>
+        </article>
+
+        <article class="tile tile--designer tile--wide reveal" data-tilt>
+          <span class="chip-ic" style="--a: var(--c-deeplink)"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-palette"/></svg></span>
+          <h3>Styled QR designer</h3>
+          <p>Dots, eyes, frames with labels, gradients and your own logo. Your QR, your vibe.</p>
+          <ul class="dot-styles" aria-label="Dot styles">
+            <li><span class="dot-demo dot-demo--square" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Square</li>
+            <li><span class="dot-demo dot-demo--fluid" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Fluid</li>
+            <li><span class="dot-demo dot-demo--soft" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Soft</li>
+            <li><span class="dot-demo dot-demo--dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Dots</li>
+          </ul>
+          <p class="tile__fine">Eyes: Square, Rounded, Circle · Frames with labels · Gradients · Your logo</p>
+        </article>
+
+        <article class="tile tile--templates reveal" data-tilt>
+          <h3><span class="big-num">8</span> templates</h3>
+          <p>One tap, fresh look.</p>
+          <ul class="swatches" aria-label="Templates">
+            <li style="--s1:#2D67E8;--s2:#0A1F66">Brand</li>
+            <li style="--s1:#111827;--s2:#111827">Classic</li>
+            <li style="--s1:#1E3A8A;--s2:#2D67E8">Ocean</li>
+            <li style="--s1:#B91C1C;--s2:#C2410C">Sunset</li>
+            <li style="--s1:#065F46;--s2:#047857">Forest</li>
+            <li style="--s1:#4C1D95;--s2:#7C3AED">Royal</li>
+            <li style="--s1:#0F172A;--s2:#2D67E8">Midnight</li>
+            <li style="--s1:#BE185D;--s2:#7E22CE">Candy</li>
+          </ul>
+        </article>
+
+        <article class="tile tile--history reveal" data-tilt>
+          <span class="chip-ic" style="--a: var(--c-phone)"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-history"/></svg></span>
+          <h3>History with search &amp; filters</h3>
+          <div class="fake-search" aria-hidden="true"><svg class="i"><use href="/assets/img/icons.svg#i-search"/></svg>chai point upi</div>
+          <ul class="filter-pills" aria-hidden="true"><li class="is-on">All</li><li>Scanned</li><li>Created</li></ul>
+        </article>
+
+        <article class="tile tile--export reveal" data-tilt>
+          <span class="chip-ic" style="--a: var(--c-sms)"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-download"/></svg></span>
+          <h3>Export PNG / share</h3>
+          <p>Save in HD or send straight to WhatsApp, Insta or anywhere.</p>
+        </article>
+
+        <article class="tile tile--theme reveal" data-tilt>
+          <div class="theme-split" aria-hidden="true">
+            <span class="theme-split__light"><svg class="i"><use href="/assets/img/icons.svg#i-sun"/></svg></span>
+            <span class="theme-split__dark"><svg class="i"><use href="/assets/img/icons.svg#i-moon"/></svg></span>
+          </div>
+          <h3>Light &amp; dark mode</h3>
+          <p>Easy on the eyes at 2&nbsp;AM.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screens -->
+  <section class="section section--tight" aria-labelledby="screens-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="kicker">Peek inside</p>
+        <h2 id="screens-title">Clean screens, no clutter</h2>
+      </div>
+      <ul class="screens">
+        <li class="reveal"><div class="phone"><div class="phone__screen"><img src="/assets/img/screens/scan.webp" width="360" height="780" loading="lazy" decoding="async" alt="Apna QR scan screen"></div></div><span>Scan</span></li>
+        <li class="reveal"><div class="phone"><div class="phone__screen"><img src="/assets/img/screens/create.webp" width="360" height="780" loading="lazy" decoding="async" alt="Apna QR create screen"></div></div><span>Create</span></li>
+        <li class="reveal"><div class="phone"><div class="phone__screen"><img src="/assets/img/screens/styles.webp" width="360" height="780" loading="lazy" decoding="async" alt="Apna QR style designer screen"></div></div><span>Styles</span></li>
+        <li class="reveal"><div class="phone"><div class="phone__screen"><img src="/assets/img/screens/history.webp" width="360" height="780" loading="lazy" decoding="async" alt="Apna QR history screen"></div></div><span>History</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="section section--tight" aria-labelledby="lang-title">
+    <div class="container">
+      <div class="lang card reveal">
+        <div>
+          <p class="kicker">Speaks your language</p>
+          <h2 id="lang-title">Apni bhasha mein scan karo</h2>
+          <p class="section__sub">The whole app works in six languages. Switch any time from settings.</p>
+        </div>
+        <ul class="lang__chips">
+          <li lang="en">English</li>
+          <li lang="hi">हिन्दी</li>
+          <li lang="ta">தமிழ்</li>
+          <li lang="te">తెలుగు</li>
+          <li lang="bn">বাংলা</li>
+          <li lang="mr">मराठी</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use-case marquee -->
+  <section class="marquee-wrap" aria-label="Things people use Apna QR for">
+    <div class="marquee">
+      <ul class="marquee__track">
+        <li>🛍️ Shop ka UPI QR</li><li>Wi-Fi share karo bina password bataye</li><li>📇 Visiting card ab QR mein</li><li>Insta bio link</li><li>💍 Wedding location pin</li><li>Café menu QR</li><li>Product barcode check</li>
+      </ul>
+      <ul class="marquee__track" aria-hidden="true">
+        <li>🛍️ Shop ka UPI QR</li><li>Wi-Fi share karo bina password bataye</li><li>📇 Visiting card ab QR mein</li><li>Insta bio link</li><li>💍 Wedding location pin</li><li>Café menu QR</li><li>Product barcode check</li>
+      </ul>
+    </div>
+    <div class="marquee marquee--reverse">
+      <ul class="marquee__track">
+        <li>College fest entry pass</li><li>🏠 Ghar ka Wi-Fi guests ke liye</li><li>Resume pe portfolio link</li><li>Rent UPI collect karo</li><li>🎉 Party invite with date</li><li>WhatsApp business chat</li><li>Lost &amp; found tag</li>
+      </ul>
+      <ul class="marquee__track" aria-hidden="true">
+        <li>College fest entry pass</li><li>🏠 Ghar ka Wi-Fi guests ke liye</li><li>Resume pe portfolio link</li><li>Rent UPI collect karo</li><li>🎉 Party invite with date</li><li>WhatsApp business chat</li><li>Lost &amp; found tag</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Generator -->
+  <section class="section" id="create" aria-labelledby="create-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="kicker">Free QR maker</p>
+        <h2 id="create-title">Make a QR right here</h2>
+        <p class="section__sub">Runs 100% in your browser. Nothing you type leaves this page.</p>
+      </div>
+<!-- GENERATOR:START -->
+      <div class="gen" data-generator>
+        <form class="gen__panel card" novalidate>
+          <fieldset class="gen__group">
+            <legend class="gen__legend"><span class="step">1</span>What's inside?</legend>
+            <div class="type-tabs">
+              <label class="type-chip" style="--a: var(--c-url)"><input type="radio" name="qr-type" value="url" checked><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-link"/></svg></span>Website</label>
+              <label class="type-chip" style="--a: var(--c-wifi)"><input type="radio" name="qr-type" value="wifi"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-wifi"/></svg></span>Wi-Fi</label>
+              <label class="type-chip" style="--a: var(--c-whatsapp)"><input type="radio" name="qr-type" value="whatsapp"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-whatsapp"/></svg></span>WhatsApp</label>
+              <label class="type-chip" style="--a: var(--c-upi)"><input type="radio" name="qr-type" value="upi"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upi"/></svg></span>UPI Pay</label>
+              <label class="type-chip" style="--a: var(--c-text)"><input type="radio" name="qr-type" value="text"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-text"/></svg></span>Text</label>
+              <label class="type-chip" style="--a: var(--c-phone)"><input type="radio" name="qr-type" value="phone"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-phone"/></svg></span>Phone</label>
+              <label class="type-chip" style="--a: var(--c-email)"><input type="radio" name="qr-type" value="email"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-mail"/></svg></span>Email</label>
+              <label class="type-chip" style="--a: var(--c-sms)"><input type="radio" name="qr-type" value="sms"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-sms"/></svg></span>SMS</label>
+              <label class="type-chip" style="--a: var(--c-contact)"><input type="radio" name="qr-type" value="contact"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-user"/></svg></span>Contact</label>
+              <label class="type-chip" style="--a: var(--c-location)"><input type="radio" name="qr-type" value="location"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg></span>Location</label>
+            </div>
+
+            <div class="fields" data-fields="url">
+              <label class="field field--full"><span>Website link</span><input name="url" type="text" inputmode="url" autocomplete="url" placeholder="apnaqr.in" value="https://apnaqr.in"></label>
+            </div>
+            <div class="fields" data-fields="wifi" hidden>
+              <label class="field"><span>Network name (SSID)</span><input name="ssid" type="text" autocomplete="off" placeholder="Sharma Home 5G"></label>
+              <label class="field"><span>Password</span><input name="password" type="text" autocomplete="off" placeholder="••••••••"></label>
+              <label class="field"><span>Security</span>
+                <select name="security"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">None (open)</option></select>
+              </label>
+              <label class="check"><input name="hidden" type="checkbox"><span>Hidden network</span></label>
+            </div>
+            <div class="fields" data-fields="whatsapp" hidden>
+              <label class="field"><span>WhatsApp number (with country code)</span><input name="waNumber" type="tel" autocomplete="tel" placeholder="91 98765 43210"></label>
+              <label class="field field--full"><span>Message (optional)</span><textarea name="waMessage" rows="2" placeholder="Hi! I saw your QR 👋"></textarea></label>
+            </div>
+            <div class="fields" data-fields="upi" hidden>
+              <label class="field"><span>UPI ID</span><input name="vpa" type="text" autocomplete="off" autocapitalize="none" placeholder="yourname@okbank"></label>
+              <label class="field"><span>Payee name</span><input name="payee" type="text" autocomplete="name" placeholder="Chai Point"></label>
+              <label class="field"><span>Amount in ₹ (optional)</span><input name="amount" type="text" inputmode="decimal" placeholder="50"></label>
+              <label class="field"><span>Note (optional)</span><input name="note" type="text" placeholder="Cutting chai"></label>
+            </div>
+            <div class="fields" data-fields="text" hidden>
+              <label class="field field--full"><span>Your text</span><textarea name="text" rows="3" placeholder="Anything you want to share"></textarea></label>
+            </div>
+            <div class="fields" data-fields="phone" hidden>
+              <label class="field"><span>Phone number</span><input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
+            </div>
+            <div class="fields" data-fields="email" hidden>
+              <label class="field"><span>Email to</span><input name="emailTo" type="email" autocomplete="email" placeholder="hello@example.com"></label>
+              <label class="field"><span>Subject (optional)</span><input name="emailSubject" type="text"></label>
+              <label class="field field--full"><span>Message (optional)</span><textarea name="emailBody" rows="2"></textarea></label>
+            </div>
+            <div class="fields" data-fields="sms" hidden>
+              <label class="field"><span>Phone number</span><input name="smsNumber" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
+              <label class="field field--full"><span>Message (optional)</span><textarea name="smsMessage" rows="2"></textarea></label>
+            </div>
+            <div class="fields" data-fields="contact" hidden>
+              <label class="field"><span>Full name</span><input name="cName" type="text" autocomplete="name" placeholder="Riya Sharma"></label>
+              <label class="field"><span>Phone</span><input name="cPhone" type="tel" autocomplete="tel"></label>
+              <label class="field"><span>Email</span><input name="cEmail" type="email" autocomplete="email"></label>
+              <label class="field"><span>Company</span><input name="cOrg" type="text" autocomplete="organization"></label>
+              <label class="field"><span>Address</span><input name="cAddress" type="text" autocomplete="street-address"></label>
+              <label class="field"><span>Website</span><input name="cWebsite" type="text" inputmode="url" autocomplete="url"></label>
+            </div>
+            <div class="fields" data-fields="location" hidden>
+              <label class="field"><span>Latitude</span><input name="lat" type="text" inputmode="decimal" placeholder="28.6139"></label>
+              <label class="field"><span>Longitude</span><input name="lng" type="text" inputmode="decimal" placeholder="77.2090"></label>
+              <label class="field"><span>Label (optional)</span><input name="geoLabel" type="text" placeholder="Shaadi venue"></label>
+              <button class="btn btn--soft btn--sm" type="button" data-geo><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg>Use my location</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="gen__group">
+            <legend class="gen__legend"><span class="step">2</span>Make it yours</legend>
+            <p class="gen__label" id="tpl-label">Templates</p>
+            <div class="templates" role="group" aria-labelledby="tpl-label">
+              <button type="button" class="tpl" data-template="brand" style="--s1:#2D67E8;--s2:#0A1F66">Brand</button>
+              <button type="button" class="tpl" data-template="classic" style="--s1:#111827;--s2:#111827">Classic</button>
+              <button type="button" class="tpl" data-template="ocean" style="--s1:#1E3A8A;--s2:#2D67E8">Ocean</button>
+              <button type="button" class="tpl" data-template="sunset" style="--s1:#B91C1C;--s2:#C2410C">Sunset</button>
+              <button type="button" class="tpl" data-template="forest" style="--s1:#065F46;--s2:#047857">Forest</button>
+              <button type="button" class="tpl" data-template="royal" style="--s1:#4C1D95;--s2:#7C3AED">Royal</button>
+              <button type="button" class="tpl" data-template="midnight" style="--s1:#0F172A;--s2:#2D67E8">Midnight</button>
+              <button type="button" class="tpl" data-template="candy" style="--s1:#BE185D;--s2:#7E22CE">Candy</button>
+            </div>
+
+            <div class="seg-row">
+              <div class="seg-block">
+                <p class="gen__label" id="dots-label">Dots</p>
+                <div class="seg" role="radiogroup" aria-labelledby="dots-label">
+                  <label><input type="radio" name="dot" value="square" checked><span>Square</span></label>
+                  <label><input type="radio" name="dot" value="classy-rounded"><span>Fluid</span></label>
+                  <label><input type="radio" name="dot" value="rounded"><span>Soft</span></label>
+                  <label><input type="radio" name="dot" value="dots"><span>Dots</span></label>
+                </div>
+              </div>
+              <div class="seg-block">
+                <p class="gen__label" id="eyes-label">Eyes</p>
+                <div class="seg" role="radiogroup" aria-labelledby="eyes-label">
+                  <label><input type="radio" name="eye" value="square" checked><span>Square</span></label>
+                  <label><input type="radio" name="eye" value="rounded"><span>Rounded</span></label>
+                  <label><input type="radio" name="eye" value="circle"><span>Circle</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="seg-block">
+              <p class="gen__label" id="fill-label">Colour</p>
+              <div class="seg seg--fit" role="radiogroup" aria-labelledby="fill-label">
+                <label><input type="radio" name="fill" value="solid" checked><span>Solid</span></label>
+                <label><input type="radio" name="fill" value="gradient"><span>Gradient</span></label>
+              </div>
+            </div>
+            <div class="colors">
+              <label class="color"><input type="color" name="fg1" value="#111827"><span>Dots</span></label>
+              <label class="color" data-grad-only hidden><input type="color" name="fg2" value="#2D67E8"><span>Dots end</span></label>
+              <label class="color"><input type="color" name="eyeColor" value="#111827"><span>Eyes</span></label>
+              <label class="color"><input type="color" name="bg" value="#FFFFFF"><span>Background</span></label>
+            </div>
+            <label class="check"><input type="checkbox" name="eyeMatch" checked><span>Eyes match the dots</span></label>
+
+            <div class="logo-row">
+              <label class="btn btn--soft btn--sm file-btn">
+                <svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upload"/></svg>
+                <span data-logo-label>Add your logo</span>
+                <input type="file" name="logo" accept="image/png,image/jpeg,image/webp,image/svg+xml">
+              </label>
+              <button type="button" class="btn btn--ghost btn--sm" data-logo-remove hidden>Remove logo</button>
+              <p class="gen__hint">Your logo stays on your device. It's never uploaded.</p>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="gen__preview">
+          <div class="preview card">
+            <div class="preview__qr" data-qr-out role="img" aria-label="QR code preview">
+              <noscript><p class="gen__hint">Turn on JavaScript to use the QR maker.</p></noscript>
+            </div>
+            <p class="preview__warn" data-contrast-warn hidden role="status"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-alert"/></svg>Hard to scan with this style</p>
+            <p class="preview__error" data-error hidden role="status"></p>
+            <div class="preview__actions">
+              <button type="button" class="btn btn--grad magnetic" data-download="png"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-download"/></svg>Download PNG</button>
+              <button type="button" class="btn btn--soft" data-download="svg">Download SVG</button>
+              <button type="button" class="btn btn--soft" data-share hidden><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-share"/></svg>Share</button>
+            </div>
+            <details class="payload">
+              <summary>See what's inside</summary>
+              <code data-payload></code>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <div class="nudge reveal">
+        <p><b>Want frames, history &amp; scanning?</b> Get the app.</p>
+        <a class="play-badge play-badge--sm" href="https://play.google.com/store/apps/details?id=com.app.apnaqrscanner" rel="noopener"><img src="/assets/img/google-play-badge.webp" width="161" height="48" loading="lazy" alt="Get it on Google Play"></a>
+      </div>
+<!-- GENERATOR:END -->
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="kicker">How it works</p>
+        <h2 id="how-title">Three steps. That's literally it.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step-card card reveal">
+          <span class="step-card__num">1</span>
+          <img class="step-card__icon" src="/assets/img/app-icon.webp" width="96" height="96" loading="lazy" alt="">
+          <h3>Open</h3>
+          <p>No login, no tutorial. The camera's ready the moment you are.</p>
+        </li>
+        <li class="step-card card reveal">
+          <span class="step-card__num">2</span>
+          <div class="lottie-box lottie-box--qr" data-lottie="/assets/lottie/qr-scanner-animation.json" aria-hidden="true"></div>
+          <h3>Scan or create</h3>
+          <p>Point at any code, pick one from your gallery, or design your own.</p>
+        </li>
+        <li class="step-card card reveal">
+          <span class="step-card__num">3</span>
+          <span class="step-card__done" aria-hidden="true"><svg class="i"><use href="/assets/img/icons.svg#i-check"/></svg></span>
+          <h3>Done</h3>
+          <p>Pay, connect, save or share in one tap. Next!</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- More apps -->
+  <section class="section" id="apps" aria-labelledby="apps-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="kicker">More apps by us</p>
+        <h2 id="apps-title">Made in India, made for you</h2>
+        <p class="section__sub">Small, fast apps that respect your phone and your data.</p>
+      </div>
+      <ul class="apps">
+        <li class="app-card reveal" style="--accent:#F15F79;--accent-2:#B24592">
+          <img src="/assets/img/apps/notezia.webp" width="64" height="64" loading="lazy" alt="">
+          <div class="app-card__body">
+            <h3>NoteZia</h3>
+            <p>Sticky notes with app lock and cloud sync.</p>
+          </div>
+          <a class="btn btn--soft btn--sm" href="https://play.google.com/store/apps/details?id=com.appgurjant.stickynotes" rel="noopener" aria-label="Get NoteZia on Google Play"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-play"/></svg>Play</a>
+        </li>
+        <li class="app-card reveal" style="--accent:#D7FF00;--accent-2:#05070D">
+          <img src="/assets/img/apps/roman-number.webp" width="64" height="64" loading="lazy" alt="">
+          <div class="app-card__body">
+            <h3>Roman Number &amp; Convertor</h3>
+            <p>Convert, quiz yourself and browse charts from 1 to 3999.</p>
+          </div>
+          <a class="btn btn--soft btn--sm" href="https://play.google.com/store/apps/details?id=com.app.romannumber" rel="noopener" aria-label="Get Roman Number and Convertor on Google Play"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-play"/></svg>Play</a>
+        </li>
+        <li class="app-card reveal" style="--accent:#A9DCC5;--accent-2:#3E7A62">
+          <img src="/assets/img/apps/apnamood.webp" width="64" height="64" loading="lazy" alt="">
+          <div class="app-card__body">
+            <h3>ApnaMood Tracker</h3>
+            <p>Daily mood check-ins, journal and insights. Your data stays on your device.</p>
+          </div>
+          <a class="btn btn--soft btn--sm" href="https://play.google.com/store/apps/details?id=com.app.apnamood" rel="noopener" aria-label="Get ApnaMood Tracker on Google Play"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-play"/></svg>Play</a>
+        </li>
+        <li class="app-card reveal" style="--accent:#50E3C2;--accent-2:#0D233E">
+          <img src="/assets/img/apps/billbox.webp" width="64" height="64" loading="lazy" alt="">
+          <div class="app-card__body">
+            <h3>BillBox</h3>
+            <p>Scan bills and never miss a warranty or expiry date.</p>
+          </div>
+          <span class="badge-soon">Coming soon</span>
+        </li>
+        <li class="app-card reveal" style="--accent:#6C4BF4;--accent-2:#4F46E5">
+          <img src="/assets/img/apps/brainbuzz.webp" width="64" height="64" loading="lazy" alt="">
+          <div class="app-card__body">
+            <h3>BrainBuzz: Daily Challenge</h3>
+            <p>Quizzes and memory games with streaks and XP.</p>
+          </div>
+          <span class="badge-soon">Coming soon</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container container--narrow">
+      <div class="section__head reveal">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-title">Questions? We got you.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Is it free?</summary>
+          <p>Yes. The scanner, smart actions, history and QR maker are free. There is no subscription and no sign-up.</p>
+        </details>
+        <details>
+          <summary>Does it upload my data?</summary>
+          <p>No. Codes are read on your phone, and your scan and create history stays in a database on your device. We don't run a server that stores your codes.</p>
+        </details>
+        <details>
+          <summary>Why ads?</summary>
+          <p>Ads keep Apna QR free. You see a small banner, and a short video only when you choose to unlock something. In the EEA and UK you are asked for consent before any personalised ads.</p>
+        </details>
+        <details>
+          <summary>What are premium templates?</summary>
+          <p>A few QR style templates are premium. Watch one short video and they unlock for the rest of the session. No payment needed.</p>
+        </details>
+        <details>
+          <summary>Which barcodes are supported?</summary>
+          <p>QR Code, Data Matrix, Aztec, PDF417, EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, Code 93, Codabar and ITF.</p>
+        </details>
+        <details>
+          <summary>How to scan from gallery?</summary>
+          <p>On the scan screen, tap the gallery button and pick a photo or screenshot. Apna QR reads the code on your phone; the image is never uploaded.</p>
+        </details>
+        <details>
+          <summary>Is UPI scanning safe?</summary>
+          <p>Apna QR only reads the UPI code and opens the UPI app you pick. It never sees your PIN or touches your money. Always check the payee name in your UPI app before paying; Apna QR reminds you every time.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="section section--tight" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta grain reveal">
+        <h2 id="cta-title">Your next scan is one tap away</h2>
+        <p>Free. Offline. No sign-up. Just open and point.</p>
+        <div class="hero__ctas">
+          <a class="play-badge magnetic" href="https://play.google.com/store/apps/details?id=com.app.apnaqrscanner" rel="noopener"><img src="/assets/img/google-play-badge.webp" width="188" height="56" loading="lazy" alt="Get it on Google Play"></a>
+          <a class="btn btn--glass magnetic" href="#create">Make a QR now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="/" aria-label="Apna QR home"><img src="/assets/img/logo-mark.svg" width="34" height="34" alt=""><span>Apna QR</span></a>
+      <p>Fast, secure, offline QR &amp; barcode scanner.</p>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/create/">QR maker</a>
+      <a href="mailto:support@apnaqr.in">Contact: support@apnaqr.in</a>
+    </nav>
+    <p class="footer__legal">© <span data-year>2026</span> Apna QR · Made with 💙 in India</p>
+  </div>
+</footer>
+<canvas class="confetti" data-confetti aria-hidden="true"></canvas>
+</body>
+</html>
