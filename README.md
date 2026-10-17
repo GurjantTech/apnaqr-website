@@ -1,6 +1,6 @@
 # apnaqr.in
 
-Official website for **Apna QR Scanner** (Android, `com.app.apnaqrscanner`): landing page, a free in-browser QR generator, and the privacy policy and terms linked from Play Console.
+Official website for **Apna QR** (Android, `com.app.apnaqrscanner`). The homepage leads with a free in-browser QR generator, then promotes the scanner app and our other apps. It also hosts the privacy policy and terms linked from Play Console.
 
 Pure static HTML, CSS and vanilla JS with no build step. GitHub Pages serves the `main` branch root as-is.
 
@@ -16,7 +16,7 @@ Use a local server rather than opening the files directly: the site uses root-re
 ## Structure
 
 ```
-index.html              Home (hero, features, generator, apps, FAQ)
+index.html              Home: QR generator first, then the scanner app, our apps and FAQ
 create/index.html       Standalone QR generator
 privacy.html            Privacy policy (link this in Play Console)
 terms.html              Terms of use
@@ -26,11 +26,15 @@ assets/js/main.js       Theme toggle, nav, scroll reveal, tilt/magnetic, Lottie,
 assets/js/generator.js  QR generator (payloads mirror the app's QrPayloadBuilder.kt)
 assets/vendor/          qr-code-styling 1.9.2, lottie-web 5.12.2 (light), with licences
 assets/lottie/          Lottie animations copied from the app
-assets/img/             Icons, logos (SVG), OG image, app icons, screenshot placeholders
+assets/img/             Icons, logos (SVG), OG image, app icons (apps/), Play Store screenshots (screens/)
 CNAME, .nojekyll, app-ads.txt, robots.txt, sitemap.xml, manifest.webmanifest
 ```
 
 The generator markup appears in both `index.html` and `create/index.html`, between `<!-- GENERATOR:START -->` and `<!-- GENERATOR:END -->`. If you change one copy, change the other too.
+
+## Our apps
+
+The "Our apps" cards in `index.html` link to the Play Store listings. Icons live in `assets/img/apps/` (192×192 WebP). To add an app, copy an `<li class="app-card">` block, set its `--accent` colour, icon, text and Play link.
 
 ## Replace the placeholders
 
@@ -38,7 +42,7 @@ The generator markup appears in both `index.html` and `create/index.html`, betwe
 | --- | --- | --- |
 | AdMob publisher ID | `app-ads.txt` | Replace `pub-XXXXXXXXXXXXXXXX` with your real ID from AdMob → Settings → Account information. |
 | Support email | all `*.html` files | Search for `support@apnaqr.in` and replace it if you use a different address. Make sure the mailbox exists. |
-| App screenshots | `assets/img/screens/` | Overwrite `scan.webp`, `create.webp`, `styles.webp` and `history.webp`. Keep the same names and a 360×780 size (or any 9:19.5 ratio) and keep each file under 150 KB. Example: `cwebp -q 78 -resize 360 0 shot.png -o scan.webp`. |
+| App screenshots | `assets/img/screens/` | `apnaqr-1.webp` to `apnaqr-5.webp` are the current Play Store screenshots (480×853). If the listing changes, overwrite them with the same names and a 9:16 ratio, keeping each under 150 KB. Example: `cwebp -q 76 -resize 480 0 shot.png -o apnaqr-1.webp`. |
 
 ## Host on GitHub Pages with apnaqr.in
 
