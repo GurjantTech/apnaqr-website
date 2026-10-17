@@ -1,38 +1,42 @@
 /* Apna QR — Google AdSense banner slots.
-   Ads stay switched off (slots hidden, no Google script loaded) until real IDs are set below.
-   Set these only after your site is approved in AdSense. Never use AdMob (app) IDs here. */
+   The mode is picked from the hostname, so nothing has to be toggled before deploying:
+   - production (apnaqr.in, www.apnaqr.in): real AdSense units, adsbygoogle.js loaded once
+   - demo (localhost, 127.0.0.1, ::1, private LAN IPs): labelled placeholders, no request to Google
+   - anything else (github.io previews, file://, unknown hosts): slots stay hidden, no request
+   Never use AdMob (app) IDs here. */
 (function () {
   'use strict';
 
   var ADSENSE = {
-    // Your AdSense publisher ID: AdSense → Account → Settings → Account information.
-    client: 'ca-pub-XXXXXXXXXXXXXXXX',
-    // Display ad unit slot IDs: AdSense → Ads → By ad unit → Display ads (copy data-ad-slot).
-    slots: {
-      'below-generator': 'XXXXXXXXXX',
-      'between-sections': 'XXXXXXXXXX'
+    client: 'ca-pub-2294761279203706',
+    // data-ad-slot-key on each <aside class="ad-slot"> picks one of these units.
+    units: {
+      horizontal: { slot: '1993165487', label: 'Horizontal', sizes: { mobile: [320, 100], desktop: [728, 90] } },
+      square: { slot: '1341147536', label: 'Square', sizes: { mobile: [300, 250], desktop: [336, 280] } }
     }
   };
 
-  var CLIENT_RE = /^ca-pub-\d{16}$/;
-  var SLOT_RE = /^\d{6,}$/;
+  var PRODUCTION_HOSTS = ['apnaqr.in', 'www.apnaqr.in'];
   var LOADER = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=';
 
-  if (!CLIENT_RE.test(ADSENSE.client)) return;
+  var host = location.hostname.toLowerCase();
+  var isProduction = location.protocol === 'https:' && PRODUCTION_HOSTS.indexOf(host) !== -1;
+  var isDemo = !isProduction && (
+    host === 'localhost' || host === '127.0.0.1' || host === '[::1]' || host === '::1' ||
+    /^(10|192\.168|172\.(1[6-9]|2\d|3[01]))\./.test(host) // phone on the same Wi-Fi
+  );
+  if (!isProduction && !isDemo) return;
 
-  var units = [];
+  var boxes = [];
   document.querySelectorAll('[data-ad-slot-key]').forEach(function (box) {
-    var slot = ADSENSE.slots[box.getAttribute('data-ad-slot-key')];
+    var unit = ADSENSE.units[box.getAttribute('data-ad-slot-key')];
     var ins = box.querySelector('ins.adsbygoogle');
-    if (!ins || !SLOT_RE.test(slot || '')) return;
-    ins.setAttribute('data-ad-client', ADSENSE.client);
-    ins.setAttribute('data-ad-slot', slot);
-    box.hidden = false;
-    units.push({ box: box, ins: ins });
+    if (unit && ins) boxes.push({ box: box, ins: ins, unit: unit });
   });
-  if (!units.length) return;
+  if (!boxes.length) return;
 
-  // "Ad privacy choices" link in the footer reopens Google's consent message when one is configured.
+  // "Ad privacy choices" in the footer reopens Google's consent message when one is configured;
+  // otherwise it simply links to the ads section of the privacy policy.
   document.querySelectorAll('[data-ad-privacy]').forEach(function (link) {
     link.hidden = false;
     link.addEventListener('click', function (e) {
@@ -43,17 +47,33 @@
     });
   });
 
-  function hideAll() { units.forEach(function (u) { u.box.hidden = true; }); }
-
-  function fill() {
-    window.adsbygoogle = window.adsbygoogle || [];
-    units.forEach(function (u) {
-      if (u.ins.getAttribute('data-adsbygoogle-status')) return;
-      try { window.adsbygoogle.push({}); } catch (e) { u.box.hidden = true; }
+  if (isDemo) {
+    document.documentElement.setAttribute('data-ad-mode', 'demo');
+    boxes.forEach(function (b) {
+      var demo = document.createElement('div');
+      var m = b.unit.sizes.mobile, d = b.unit.sizes.desktop;
+      demo.className = 'ad-demo ad-demo--' + b.box.getAttribute('data-ad-slot-key');
+      demo.setAttribute('role', 'note');
+      demo.innerHTML =
+        '<strong>Demo Ad — Not a real advertisement</strong>' +
+        '<span>' + b.unit.label + ' unit · slot ' + b.unit.slot + '</span>' +
+        '<span class="ad-demo__size" data-mobile="' + m[0] + ' × ' + m[1] + '" data-desktop="' + d[0] + ' × ' + d[1] + '"></span>';
+      b.ins.hidden = true; // the real unit is never filled or pushed in demo mode
+      b.box.querySelector('.ad-slot__box').appendChild(demo);
+      b.box.hidden = false;
     });
+    return;
   }
 
-  // Load Google's script once, after the page (and the QR generator) has loaded.
+  // Production: fill in the real IDs, load Google's script once after the page has loaded.
+  boxes.forEach(function (b) {
+    b.ins.setAttribute('data-ad-client', ADSENSE.client);
+    b.ins.setAttribute('data-ad-slot', b.unit.slot);
+    b.box.hidden = false;
+  });
+
+  function hideAll() { boxes.forEach(function (b) { b.box.hidden = true; }); }
+
   function load() {
     if (!document.querySelector('script[src^="' + LOADER + '"]')) {
       var s = document.createElement('script');
@@ -63,7 +83,11 @@
       s.onerror = hideAll; // blocked or offline: collapse the slots instead of leaving gaps
       document.head.appendChild(s);
     }
-    fill();
+    window.adsbygoogle = window.adsbygoogle || [];
+    boxes.forEach(function (b) {
+      if (b.ins.getAttribute('data-adsbygoogle-status')) return;
+      try { window.adsbygoogle.push({}); } catch (e) { b.box.hidden = true; }
+    });
   }
 
   if (document.readyState === 'complete') load();
