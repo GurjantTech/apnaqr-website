@@ -26,7 +26,7 @@ assets/js/main.js       Theme toggle, nav, scroll reveal, magnetic buttons, conf
 assets/js/generator.js  QR generator (payloads mirror the app's QrPayloadBuilder.kt)
 assets/vendor/          qr-code-styling 1.9.2, with licence
 assets/img/             Icons, logos (SVG), OG image, app icons (apps/), Play Store screenshots used in the app promo (screens/)
-assets/js/ads.js        AdSense config (publisher + slot IDs) and loader
+assets/js/ads.js        AdSense units, hostname-based demo/production mode, loader
 CNAME, .nojekyll, ads.txt, app-ads.txt, robots.txt, sitemap.xml, manifest.webmanifest
 ```
 
@@ -40,26 +40,41 @@ The "Our apps" cards in `index.html` link to the Play Store listings. Icons live
 
 | What | Where | How |
 | --- | --- | --- |
-| AdSense IDs | `assets/js/ads.js`, `index.html` meta tag, `ads.txt` | See [Google AdSense](#google-adsense-website-ads) below. |
 | AdMob publisher ID | `app-ads.txt` | Replace `pub-XXXXXXXXXXXXXXXX` with your real ID from AdMob → Settings → Account information. |
 | Support email | all `*.html` files | Currently `gtech10926@gmail.com`. To change it, search the HTML files for that address. |
 | App screenshots | `assets/img/screens/` | `apnaqr-1.webp` to `apnaqr-3.webp` are Play Store screenshots (480×853) shown in the app promo card. If the listing changes, overwrite them with the same names and a 9:16 ratio, keeping each under 150 KB. Example: `cwebp -q 76 -resize 480 0 shot.png -o apnaqr-1.webp`. |
 
 ## Google AdSense (website ads)
 
-The site has two banner slots, both switched **off** until you add real IDs: one below the QR generator (home and `/create/`) and one between "Our apps" and the FAQ (home only). While the IDs are placeholders, the slots stay hidden and Google's script never loads. Privacy, terms and the 404 page never show ads.
+Publisher ID `ca-pub-2294761279203706` is set in `assets/js/ads.js`, the `google-adsense-account` meta tag in `index.html`, and `ads.txt`. There are two units:
 
-Do these steps only after Google approves apnaqr.in in AdSense. Use your **AdSense** publisher ID (`ca-pub-…`), never AdMob app IDs (`ca-app-pub-…`).
+| Unit | Slot ID | Where | Sizes (mobile / desktop) |
+| --- | --- | --- | --- |
+| Horizontal | `1993165487` | Below the QR generator (home and `/create/`) | 320×100 / 728×90 |
+| Square | `1341147536` | Between "Our apps" and the FAQ (home only) | 300×250 / 336×280 |
 
-1. **Get approved.** In AdSense, add the site `apnaqr.in`. For ownership verification, use the meta tag (step 2) or `ads.txt` (step 3). Wait for approval.
-2. **Meta tag.** In `index.html`, replace `ca-pub-XXXXXXXXXXXXXXXX` in `<meta name="google-adsense-account" …>` with your publisher ID.
-3. **ads.txt.** In `/ads.txt`, replace `pub-XXXXXXXXXXXXXXXX` with your ID, without the `ca-` prefix. Keep `f08c47fec0942fa0`, which is Google's fixed certification ID. This file is separate from `app-ads.txt` (AdMob).
-4. **Ad units.** In AdSense → Ads → By ad unit, create two **Display ads** set to *Responsive*. Copy each unit's `data-ad-slot` number.
-5. **Config.** In `assets/js/ads.js`, set `client` to your `ca-pub-…` ID and paste the two slot numbers into `below-generator` and `between-sections`. A slot left as `XXXXXXXXXX` stays hidden.
-6. **Consent (EEA, UK, Switzerland).** In AdSense → Privacy & messaging, create and publish a **European regulations** (GDPR) message, using Google's certified CMP. Optionally add the **US state regulations** message too. Google's script shows these automatically; no extra code is needed. The footer's "Ad privacy choices" link appears once ads are on, and reopens the consent message.
-7. **Deploy.** Commit and push to `main`. Then check that `https://apnaqr.in/ads.txt` loads and that the ad boxes appear. New units can take a while to fill, and an unfilled unit hides itself.
+`ads.js` picks the mode from the hostname, so nothing needs toggling before you deploy:
 
-Ad slots use Google's official responsive `<ins class="adsbygoogle">` markup. `ads.js` loads `adsbygoogle.js` once per page, after the page has loaded. Each slot carries an "Advertisement" label and sits well away from the QR preview, inputs and download buttons. Don't add slots inside the generator, and never ask visitors to click ads.
+- **Production:** `https://apnaqr.in` and `https://www.apnaqr.in`. Fills the real units and loads `adsbygoogle.js` once per page, after page load.
+- **Demo:** `localhost`, `127.0.0.1` and private LAN IPs (e.g. `192.168.x.x`). Shows dashed "Demo Ad — Not a real advertisement" boxes with the same size and placement. Nothing is requested from Google.
+- **Anything else:** `*.github.io`, `file://`, plain `http://`. No ads and no requests.
+
+Privacy, terms and the 404 page never show ads.
+
+### Preview ad placements locally
+
+```bash
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000` and scroll below the generator for the horizontal box, and below "Our apps" for the square box. To check other widths, use your browser's device toolbar (Ctrl+Shift+M in Chrome or Firefox): try 360px (mobile) and 1280px or wider (desktop). The size label in each box switches at 768px. To preview on your phone, open `http://<your-computer's-LAN-IP>:8000` on the same Wi-Fi.
+
+### Before real ads can show
+
+1. Google must approve `apnaqr.in` in AdSense. Until then the production boxes may stay empty, and an unfilled unit hides itself.
+2. Check that `https://apnaqr.in/ads.txt` is reachable after deploying.
+3. In AdSense → Privacy & messaging, publish the **European regulations** (GDPR) message, and optionally the US state regulations message. Google's script shows it automatically. The footer link "Ad privacy choices" reopens it.
+4. To change units later, edit only the `ADSENSE` object at the top of `assets/js/ads.js`. Never use AdMob (`ca-app-pub-…`) IDs there.
 
 ## Host on GitHub Pages with apnaqr.in
 
