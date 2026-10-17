@@ -26,13 +26,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@700;800&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@700;800&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="preload" href="/assets/vendor/qr-code-styling-1.9.2.min.js" as="script">
 <script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('apnaqr-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})();</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/generator.js" defer></script>
 <link rel="alternate" href="android-app://com.app.apnaqrscanner/https/apnaqr.in/create/">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#create">Skip to QR generator</a>
 
 <header class="nav" data-nav>
   <div class="container nav__inner">
@@ -41,9 +42,9 @@
       <span>Apna QR</span>
     </a>
     <nav class="nav__links" id="nav-links" aria-label="Primary">
-      <a href="/#features">Features</a>
-      <a href="/#create">Create QR</a>
-      <a href="/#apps">Apps</a>
+      <a href="/#create">QR generator</a>
+      <a href="/#scanner">Scanner app</a>
+      <a href="/#apps">Our apps</a>
       <a href="/#faq">FAQ</a>
     </nav>
     <div class="nav__actions">
@@ -60,148 +61,87 @@
 </header>
 
 <main id="main">
-  <section class="section section--first" id="create" aria-labelledby="create-title">
+  <section class="gen-hero" id="create" aria-labelledby="create-title">
     <div class="container">
-      <div class="section__head">
-        <p class="kicker">Free QR maker</p>
-        <h1 id="create-title" class="page-title">Make a QR in seconds</h1>
-        <p class="section__sub">Website, Wi-Fi, UPI, WhatsApp and more. Pick a style, add your logo, download. Runs 100% in your browser, so nothing you type leaves this page.</p>
+      <div class="gen-hero__band grain" data-hero>
+        <div class="hero__cursor" aria-hidden="true"></div>
+        <p class="eyebrow">Free · No sign-up · No uploads</p>
+        <h1 id="create-title">Free <span class="grad-word">QR code</span> generator</h1>
+        <p class="gen-hero__sub">Make QR codes for links, text, Wi-Fi, WhatsApp, UPI, phone, email, SMS, contacts and locations. Add colours and your logo, then download PNG or SVG.</p>
       </div>
 <!-- GENERATOR:START -->
-      <div class="gen" data-generator>
-        <form class="gen__panel card" novalidate>
-          <fieldset class="gen__group">
-            <legend class="gen__legend"><span class="step">1</span>What's inside?</legend>
-            <div class="type-tabs">
-              <label class="type-chip" style="--a: var(--c-url)"><input type="radio" name="qr-type" value="url" checked><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-link"/></svg></span>Website</label>
-              <label class="type-chip" style="--a: var(--c-wifi)"><input type="radio" name="qr-type" value="wifi"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-wifi"/></svg></span>Wi-Fi</label>
-              <label class="type-chip" style="--a: var(--c-whatsapp)"><input type="radio" name="qr-type" value="whatsapp"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-whatsapp"/></svg></span>WhatsApp</label>
-              <label class="type-chip" style="--a: var(--c-upi)"><input type="radio" name="qr-type" value="upi"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upi"/></svg></span>UPI Pay</label>
-              <label class="type-chip" style="--a: var(--c-text)"><input type="radio" name="qr-type" value="text"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-text"/></svg></span>Text</label>
-              <label class="type-chip" style="--a: var(--c-phone)"><input type="radio" name="qr-type" value="phone"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-phone"/></svg></span>Phone</label>
-              <label class="type-chip" style="--a: var(--c-email)"><input type="radio" name="qr-type" value="email"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-mail"/></svg></span>Email</label>
-              <label class="type-chip" style="--a: var(--c-sms)"><input type="radio" name="qr-type" value="sms"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-sms"/></svg></span>SMS</label>
-              <label class="type-chip" style="--a: var(--c-contact)"><input type="radio" name="qr-type" value="contact"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-user"/></svg></span>Contact</label>
-              <label class="type-chip" style="--a: var(--c-location)"><input type="radio" name="qr-type" value="location"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg></span>Location</label>
-            </div>
+      <form class="gen" data-generator novalidate>
+        <fieldset class="gen__content card">
+          <legend class="gen__legend"><span class="step">1</span>What's inside?</legend>
+          <div class="type-tabs" role="radiogroup" aria-label="QR code type">
+            <label class="type-chip" style="--a: var(--c-url)"><input type="radio" name="qr-type" value="url" checked><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-link"/></svg></span>URL</label>
+            <label class="type-chip" style="--a: var(--c-text)"><input type="radio" name="qr-type" value="text"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-text"/></svg></span>Text</label>
+            <label class="type-chip" style="--a: var(--c-wifi)"><input type="radio" name="qr-type" value="wifi"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-wifi"/></svg></span>Wi-Fi</label>
+            <label class="type-chip" style="--a: var(--c-whatsapp)"><input type="radio" name="qr-type" value="whatsapp"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-whatsapp"/></svg></span>WhatsApp</label>
+            <label class="type-chip" style="--a: var(--c-upi)"><input type="radio" name="qr-type" value="upi"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upi"/></svg></span>UPI</label>
+            <label class="type-chip" style="--a: var(--c-phone)"><input type="radio" name="qr-type" value="phone"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-phone"/></svg></span>Phone</label>
+            <label class="type-chip" style="--a: var(--c-email)"><input type="radio" name="qr-type" value="email"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-mail"/></svg></span>Email</label>
+            <label class="type-chip" style="--a: var(--c-sms)"><input type="radio" name="qr-type" value="sms"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-sms"/></svg></span>SMS</label>
+            <label class="type-chip" style="--a: var(--c-contact)"><input type="radio" name="qr-type" value="contact"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-user"/></svg></span>Contact</label>
+            <label class="type-chip" style="--a: var(--c-location)"><input type="radio" name="qr-type" value="location"><span class="chip-ic chip-ic--sm"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg></span>Location</label>
+          </div>
 
-            <div class="fields" data-fields="url">
-              <label class="field field--full"><span>Website link</span><input name="url" type="text" inputmode="url" autocomplete="url" placeholder="apnaqr.in" value="https://apnaqr.in"></label>
-            </div>
-            <div class="fields" data-fields="wifi" hidden>
-              <label class="field"><span>Network name (SSID)</span><input name="ssid" type="text" autocomplete="off" placeholder="Sharma Home 5G"></label>
-              <label class="field"><span>Password</span><input name="password" type="text" autocomplete="off" placeholder="••••••••"></label>
-              <label class="field"><span>Security</span>
-                <select name="security"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">None (open)</option></select>
-              </label>
-              <label class="check"><input name="hidden" type="checkbox"><span>Hidden network</span></label>
-            </div>
-            <div class="fields" data-fields="whatsapp" hidden>
-              <label class="field"><span>WhatsApp number (with country code)</span><input name="waNumber" type="tel" autocomplete="tel" placeholder="91 98765 43210"></label>
-              <label class="field field--full"><span>Message (optional)</span><textarea name="waMessage" rows="2" placeholder="Hi! I saw your QR 👋"></textarea></label>
-            </div>
-            <div class="fields" data-fields="upi" hidden>
-              <label class="field"><span>UPI ID</span><input name="vpa" type="text" autocomplete="off" autocapitalize="none" placeholder="yourname@okbank"></label>
-              <label class="field"><span>Payee name</span><input name="payee" type="text" autocomplete="name" placeholder="Chai Point"></label>
-              <label class="field"><span>Amount in ₹ (optional)</span><input name="amount" type="text" inputmode="decimal" placeholder="50"></label>
-              <label class="field"><span>Note (optional)</span><input name="note" type="text" placeholder="Cutting chai"></label>
-            </div>
-            <div class="fields" data-fields="text" hidden>
-              <label class="field field--full"><span>Your text</span><textarea name="text" rows="3" placeholder="Anything you want to share"></textarea></label>
-            </div>
-            <div class="fields" data-fields="phone" hidden>
-              <label class="field"><span>Phone number</span><input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
-            </div>
-            <div class="fields" data-fields="email" hidden>
-              <label class="field"><span>Email to</span><input name="emailTo" type="email" autocomplete="email" placeholder="hello@example.com"></label>
-              <label class="field"><span>Subject (optional)</span><input name="emailSubject" type="text"></label>
-              <label class="field field--full"><span>Message (optional)</span><textarea name="emailBody" rows="2"></textarea></label>
-            </div>
-            <div class="fields" data-fields="sms" hidden>
-              <label class="field"><span>Phone number</span><input name="smsNumber" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
-              <label class="field field--full"><span>Message (optional)</span><textarea name="smsMessage" rows="2"></textarea></label>
-            </div>
-            <div class="fields" data-fields="contact" hidden>
-              <label class="field"><span>Full name</span><input name="cName" type="text" autocomplete="name" placeholder="Riya Sharma"></label>
-              <label class="field"><span>Phone</span><input name="cPhone" type="tel" autocomplete="tel"></label>
-              <label class="field"><span>Email</span><input name="cEmail" type="email" autocomplete="email"></label>
-              <label class="field"><span>Company</span><input name="cOrg" type="text" autocomplete="organization"></label>
-              <label class="field"><span>Address</span><input name="cAddress" type="text" autocomplete="street-address"></label>
-              <label class="field"><span>Website</span><input name="cWebsite" type="text" inputmode="url" autocomplete="url"></label>
-            </div>
-            <div class="fields" data-fields="location" hidden>
-              <label class="field"><span>Latitude</span><input name="lat" type="text" inputmode="decimal" placeholder="28.6139"></label>
-              <label class="field"><span>Longitude</span><input name="lng" type="text" inputmode="decimal" placeholder="77.2090"></label>
-              <label class="field"><span>Label (optional)</span><input name="geoLabel" type="text" placeholder="Shaadi venue"></label>
-              <button class="btn btn--soft btn--sm" type="button" data-geo><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg>Use my location</button>
-            </div>
-          </fieldset>
-
-          <fieldset class="gen__group">
-            <legend class="gen__legend"><span class="step">2</span>Make it yours</legend>
-            <p class="gen__label" id="tpl-label">Templates</p>
-            <div class="templates" role="group" aria-labelledby="tpl-label">
-              <button type="button" class="tpl" data-template="brand" style="--s1:#2D67E8;--s2:#0A1F66">Brand</button>
-              <button type="button" class="tpl" data-template="classic" style="--s1:#111827;--s2:#111827">Classic</button>
-              <button type="button" class="tpl" data-template="ocean" style="--s1:#1E3A8A;--s2:#2D67E8">Ocean</button>
-              <button type="button" class="tpl" data-template="sunset" style="--s1:#B91C1C;--s2:#C2410C">Sunset</button>
-              <button type="button" class="tpl" data-template="forest" style="--s1:#065F46;--s2:#047857">Forest</button>
-              <button type="button" class="tpl" data-template="royal" style="--s1:#4C1D95;--s2:#7C3AED">Royal</button>
-              <button type="button" class="tpl" data-template="midnight" style="--s1:#0F172A;--s2:#2D67E8">Midnight</button>
-              <button type="button" class="tpl" data-template="candy" style="--s1:#BE185D;--s2:#7E22CE">Candy</button>
-            </div>
-
-            <div class="seg-row">
-              <div class="seg-block">
-                <p class="gen__label" id="dots-label">Dots</p>
-                <div class="seg" role="radiogroup" aria-labelledby="dots-label">
-                  <label><input type="radio" name="dot" value="square" checked><span>Square</span></label>
-                  <label><input type="radio" name="dot" value="classy-rounded"><span>Fluid</span></label>
-                  <label><input type="radio" name="dot" value="rounded"><span>Soft</span></label>
-                  <label><input type="radio" name="dot" value="dots"><span>Dots</span></label>
-                </div>
-              </div>
-              <div class="seg-block">
-                <p class="gen__label" id="eyes-label">Eyes</p>
-                <div class="seg" role="radiogroup" aria-labelledby="eyes-label">
-                  <label><input type="radio" name="eye" value="square" checked><span>Square</span></label>
-                  <label><input type="radio" name="eye" value="rounded"><span>Rounded</span></label>
-                  <label><input type="radio" name="eye" value="circle"><span>Circle</span></label>
-                </div>
-              </div>
-            </div>
-
-            <div class="seg-block">
-              <p class="gen__label" id="fill-label">Colour</p>
-              <div class="seg seg--fit" role="radiogroup" aria-labelledby="fill-label">
-                <label><input type="radio" name="fill" value="solid" checked><span>Solid</span></label>
-                <label><input type="radio" name="fill" value="gradient"><span>Gradient</span></label>
-              </div>
-            </div>
-            <div class="colors">
-              <label class="color"><input type="color" name="fg1" value="#111827"><span>Dots</span></label>
-              <label class="color" data-grad-only hidden><input type="color" name="fg2" value="#2D67E8"><span>Dots end</span></label>
-              <label class="color"><input type="color" name="eyeColor" value="#111827"><span>Eyes</span></label>
-              <label class="color"><input type="color" name="bg" value="#FFFFFF"><span>Background</span></label>
-            </div>
-            <label class="check"><input type="checkbox" name="eyeMatch" checked><span>Eyes match the dots</span></label>
-
-            <div class="logo-row">
-              <label class="btn btn--soft btn--sm file-btn">
-                <svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upload"/></svg>
-                <span data-logo-label>Add your logo</span>
-                <input type="file" name="logo" accept="image/png,image/jpeg,image/webp,image/svg+xml">
-              </label>
-              <button type="button" class="btn btn--ghost btn--sm" data-logo-remove hidden>Remove logo</button>
-              <p class="gen__hint">Your logo stays on your device. It's never uploaded.</p>
-            </div>
-          </fieldset>
-        </form>
+          <div class="fields" data-fields="url">
+            <label class="field field--full"><span>Link or website</span><input name="url" type="text" inputmode="url" autocomplete="url" autocapitalize="none" spellcheck="false" placeholder="apnaqr.in" value="https://apnaqr.in"></label>
+          </div>
+          <div class="fields" data-fields="text" hidden>
+            <label class="field field--full"><span>Your text</span><textarea name="text" rows="3" placeholder="Anything you want to share"></textarea></label>
+          </div>
+          <div class="fields" data-fields="wifi" hidden>
+            <label class="field"><span>Network name (SSID)</span><input name="ssid" type="text" autocomplete="off" placeholder="Sharma Home 5G"></label>
+            <label class="field"><span>Password</span><input name="password" type="text" autocomplete="off" spellcheck="false" placeholder="••••••••"></label>
+            <label class="field"><span>Security</span>
+              <select name="security"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">None (open)</option></select>
+            </label>
+            <label class="check"><input name="hidden" type="checkbox"><span>Hidden network</span></label>
+          </div>
+          <div class="fields" data-fields="whatsapp" hidden>
+            <label class="field"><span>WhatsApp number (with country code)</span><input name="waNumber" type="tel" autocomplete="tel" placeholder="91 98765 43210"></label>
+            <label class="field field--full"><span>Message (optional)</span><textarea name="waMessage" rows="2" placeholder="Hi! I saw your QR 👋"></textarea></label>
+          </div>
+          <div class="fields" data-fields="upi" hidden>
+            <label class="field"><span>UPI ID</span><input name="vpa" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="yourname@okbank"></label>
+            <label class="field"><span>Payee name</span><input name="payee" type="text" autocomplete="name" placeholder="Chai Point"></label>
+            <label class="field"><span>Amount in ₹ (optional)</span><input name="amount" type="text" inputmode="decimal" placeholder="50"></label>
+            <label class="field"><span>Note (optional)</span><input name="note" type="text" placeholder="Cutting chai"></label>
+          </div>
+          <div class="fields" data-fields="phone" hidden>
+            <label class="field"><span>Phone number</span><input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
+          </div>
+          <div class="fields" data-fields="email" hidden>
+            <label class="field"><span>Email to</span><input name="emailTo" type="email" autocomplete="email" placeholder="hello@example.com"></label>
+            <label class="field"><span>Subject (optional)</span><input name="emailSubject" type="text"></label>
+            <label class="field field--full"><span>Message (optional)</span><textarea name="emailBody" rows="2"></textarea></label>
+          </div>
+          <div class="fields" data-fields="sms" hidden>
+            <label class="field"><span>Phone number</span><input name="smsNumber" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
+            <label class="field field--full"><span>Message (optional)</span><textarea name="smsMessage" rows="2"></textarea></label>
+          </div>
+          <div class="fields" data-fields="contact" hidden>
+            <label class="field"><span>Full name</span><input name="cName" type="text" autocomplete="name" placeholder="Riya Sharma"></label>
+            <label class="field"><span>Phone</span><input name="cPhone" type="tel" autocomplete="tel"></label>
+            <label class="field"><span>Email</span><input name="cEmail" type="email" autocomplete="email"></label>
+            <label class="field"><span>Company</span><input name="cOrg" type="text" autocomplete="organization"></label>
+            <label class="field"><span>Address</span><input name="cAddress" type="text" autocomplete="street-address"></label>
+            <label class="field"><span>Website</span><input name="cWebsite" type="text" inputmode="url" autocomplete="url"></label>
+          </div>
+          <div class="fields" data-fields="location" hidden>
+            <label class="field"><span>Latitude</span><input name="lat" type="text" inputmode="decimal" placeholder="28.6139"></label>
+            <label class="field"><span>Longitude</span><input name="lng" type="text" inputmode="decimal" placeholder="77.2090"></label>
+            <label class="field"><span>Label (optional)</span><input name="geoLabel" type="text" placeholder="Shaadi venue"></label>
+            <button class="btn btn--soft btn--sm" type="button" data-geo><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-pin"/></svg>Use my location</button>
+          </div>
+        </fieldset>
 
         <div class="gen__preview">
           <div class="preview card">
             <div class="preview__qr" data-qr-out role="img" aria-label="QR code preview">
-              <noscript><p class="gen__hint">Turn on JavaScript to use the QR maker.</p></noscript>
+              <noscript><p class="gen__hint">Turn on JavaScript to use the QR generator.</p></noscript>
             </div>
             <p class="preview__warn" data-contrast-warn hidden role="status"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-alert"/></svg>Hard to scan with this style</p>
             <p class="preview__error" data-error hidden role="status"></p>
@@ -210,19 +150,86 @@
               <button type="button" class="btn btn--soft" data-download="svg">Download SVG</button>
               <button type="button" class="btn btn--soft" data-share hidden><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-share"/></svg>Share</button>
             </div>
+            <p class="preview__note"><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-lock"/></svg>Made on your device. Nothing is uploaded or stored.</p>
             <details class="payload">
               <summary>See what's inside</summary>
               <code data-payload></code>
             </details>
           </div>
         </div>
-      </div>
 
-      <div class="nudge reveal">
-        <p><b>Want frames, history &amp; scanning?</b> Get the app.</p>
+        <fieldset class="gen__style card">
+          <legend class="gen__legend"><span class="step">2</span>Make it yours</legend>
+          <p class="gen__label" id="tpl-label">Templates</p>
+          <div class="templates" role="group" aria-labelledby="tpl-label">
+            <button type="button" class="tpl" data-template="brand" style="--s1:#2D67E8;--s2:#0A1F66">Brand</button>
+            <button type="button" class="tpl" data-template="classic" style="--s1:#111827;--s2:#111827">Classic</button>
+            <button type="button" class="tpl" data-template="ocean" style="--s1:#1E3A8A;--s2:#2D67E8">Ocean</button>
+            <button type="button" class="tpl" data-template="sunset" style="--s1:#B91C1C;--s2:#C2410C">Sunset</button>
+            <button type="button" class="tpl" data-template="forest" style="--s1:#065F46;--s2:#047857">Forest</button>
+            <button type="button" class="tpl" data-template="royal" style="--s1:#4C1D95;--s2:#7C3AED">Royal</button>
+            <button type="button" class="tpl" data-template="midnight" style="--s1:#0F172A;--s2:#2D67E8">Midnight</button>
+            <button type="button" class="tpl" data-template="candy" style="--s1:#BE185D;--s2:#7E22CE">Candy</button>
+          </div>
+
+          <div class="seg-row">
+            <div class="seg-block">
+              <p class="gen__label" id="dots-label">Dots</p>
+              <div class="seg" role="radiogroup" aria-labelledby="dots-label">
+                <label><input type="radio" name="dot" value="square" checked><span>Square</span></label>
+                <label><input type="radio" name="dot" value="classy-rounded"><span>Fluid</span></label>
+                <label><input type="radio" name="dot" value="rounded"><span>Soft</span></label>
+                <label><input type="radio" name="dot" value="dots"><span>Dots</span></label>
+              </div>
+            </div>
+            <div class="seg-block">
+              <p class="gen__label" id="eyes-label">Eyes</p>
+              <div class="seg" role="radiogroup" aria-labelledby="eyes-label">
+                <label><input type="radio" name="eye" value="square" checked><span>Square</span></label>
+                <label><input type="radio" name="eye" value="rounded"><span>Rounded</span></label>
+                <label><input type="radio" name="eye" value="circle"><span>Circle</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="seg-block">
+            <p class="gen__label" id="fill-label">Colour</p>
+            <div class="seg seg--fit" role="radiogroup" aria-labelledby="fill-label">
+              <label><input type="radio" name="fill" value="solid" checked><span>Solid</span></label>
+              <label><input type="radio" name="fill" value="gradient"><span>Gradient</span></label>
+            </div>
+          </div>
+          <div class="colors">
+            <label class="color"><input type="color" name="fg1" value="#111827"><span>Dots</span></label>
+            <label class="color" data-grad-only hidden><input type="color" name="fg2" value="#2D67E8"><span>Dots end</span></label>
+            <label class="color"><input type="color" name="eyeColor" value="#111827"><span>Eyes</span></label>
+            <label class="color"><input type="color" name="bg" value="#FFFFFF"><span>Background</span></label>
+          </div>
+          <label class="check"><input type="checkbox" name="eyeMatch" checked><span>Eyes match the dots</span></label>
+
+          <div class="logo-row">
+            <label class="btn btn--soft btn--sm file-btn">
+              <svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-upload"/></svg>
+              <span data-logo-label>Add your logo</span>
+              <input type="file" name="logo" accept="image/png,image/jpeg,image/webp,image/svg+xml">
+            </label>
+            <button type="button" class="btn btn--ghost btn--sm" data-logo-remove hidden>Remove logo</button>
+            <p class="gen__hint">Your logo stays on your device. It's never uploaded.</p>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="nudge">
+        <p><b>Want to scan codes, keep history &amp; add frames?</b> Get the free Apna QR app.</p>
         <a class="play-badge play-badge--sm" href="https://play.google.com/store/apps/details?id=com.app.apnaqrscanner" rel="noopener"><img src="/assets/img/google-play-badge.webp" width="161" height="48" loading="lazy" alt="Get it on Google Play"></a>
       </div>
 <!-- GENERATOR:END -->
+      <ul class="trust__list">
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-cloud-off"/></svg>Nothing uploaded</li>
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-qr"/></svg>10 QR types</li>
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-download"/></svg>PNG &amp; SVG</li>
+        <li><svg class="i" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg>No watermark</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -231,12 +238,13 @@
   <div class="container footer__inner">
     <div class="footer__brand">
       <a class="brand" href="/" aria-label="Apna QR home"><img src="/assets/img/logo-mark.svg" width="34" height="34" alt=""><span>Apna QR</span></a>
-      <p>Fast, secure, offline QR &amp; barcode scanner.</p>
+      <p>Free QR code generator and the Apna QR scanner app for Android.</p>
     </div>
     <nav class="footer__links" aria-label="Footer">
+      <a href="/create/">QR generator</a>
+      <a href="/#apps">Our apps</a>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms</a>
-      <a href="/create/">QR maker</a>
       <a href="mailto:support@apnaqr.in">Contact: support@apnaqr.in</a>
     </nav>
     <p class="footer__legal">© <span data-year>2026</span> Apna QR · Made with 💙 in India</p>

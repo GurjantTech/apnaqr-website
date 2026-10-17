@@ -9,7 +9,7 @@
   var LIB = '/assets/vendor/qr-code-styling-1.9.2.min.js';
   var APP_LOGO = '/assets/img/logo-mark.svg';
 
-  var form = host.querySelector('form');
+  var form = host.tagName === 'FORM' ? host : host.querySelector('form');
   var out = host.querySelector('[data-qr-out]');
   var warn = host.querySelector('[data-contrast-warn]');
   var errorEl = host.querySelector('[data-error]');
